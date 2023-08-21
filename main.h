@@ -63,7 +63,7 @@ int(*get_specifier(char *s))(va_list ap, params_t *params);
 int get_print_func(char * s, va_list ap, params_t *params);
 int get_flag(char *s, params_t *params);
 int get_modifier(char *s, params_t *params);
-char *get_width(char * s, va_list ap, params_t *params);
+char *get_width(char * s, params_t *params, va_list ap);
 
 int print_HEX(va_list ap, params_t *params);
 int print_hex(va_list ap, params_t *params);
@@ -82,8 +82,8 @@ int print_number_left_shift(char *str, params_t *params);
 
 void init_params(params_t *params, va_list ap);
 
-char *get_precision(char *p, params_t *params, va_list ap)
+char *get_precision(char *p, params_t *params, va_list ap);
 
-int _printf(const char *format, ...)
+int _printf(const char *format, ...);
 
 #endif
