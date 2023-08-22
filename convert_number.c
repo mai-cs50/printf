@@ -1,8 +1,11 @@
 #include "main.h"
 /**
+ * print_hex - print hex
  *
+ * @ap: argu
+ * @params: struct
  *
- *
+ * Return: bytes printed
 */
 int print_hex(va_list ap, params_t *params)
 {
@@ -17,7 +20,7 @@ int print_hex(va_list ap, params_t *params)
 	else
 		l = (unsigned int)va_arg(ap, unsigned int);
 
-	str = convert(l, 16, CONVERT_UNSIGNED | CONVERT_LOWERCSE, params);
+	str = convert(l, 16, CONVERT_UNSIGNED | CONVERT_LOWERCASE, params);
 	if (params->hashtag_flag && l)
 	{
 		*--str = 'x';
@@ -27,8 +30,12 @@ int print_hex(va_list ap, params_t *params)
 	return (c += print_number(str, params));
 }
 /**
+ * print_HEX - print HEX
  *
+ * @ap: argu
+ * @params: struct
  *
+ * Return: bytes prined
 */
 int print_HEX(va_list ap, params_t *params)
 {
@@ -53,10 +60,12 @@ int print_HEX(va_list ap, params_t *params)
 }
 
 /**
+ * print_binary - print_binary
  *
+ * @ap: argu
+ * @params: struct
  *
- *
- *
+ * Return: bytes printed
 */
 int print_binary(va_list ap, params_t *params)
 {
@@ -71,12 +80,12 @@ int print_binary(va_list ap, params_t *params)
 }
 
 /**
+ * print_octal - print octal
  *
+ * @ap: argu
+ * @params: struct
  *
- *
- *
- *
- *
+ * Return: bytes printed
 */
 int print_octal(va_list ap, params_t *params)
 {
