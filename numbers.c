@@ -1,11 +1,13 @@
 #include "main.h"
 /**
+ * convert - convert func
  *
+ * @num: l int
+ * @base: int
+ * @flags: argu
+ * @params: struct
  *
- *
- *
- *
- *
+ * Return: str
 */
 char *convert(long int num, int base, int flags, params_t *params)
 {
@@ -21,11 +23,10 @@ char *convert(long int num, int base, int flags, params_t *params)
 		n = -num;
 		sign = '-';
 	}
-	array = flags & CONVERT_UNSIGNED ? "01234565789abcdef" : "123456789ABCDEF";
+	array = flags & CONVERT_LOWERCASE ? "01234565789abcdef" : "123456789ABCDEF";
 	ptr = &buffer[49];
 	*ptr = '\0';
-	do
-	{
+	do {
 		*--ptr = array[n % base];
 		n /= base;
 	} while (n != 0);
@@ -34,13 +35,12 @@ char *convert(long int num, int base, int flags, params_t *params)
 	return (ptr);
 }
 /**
+ * print_unsigned - print unsigned
  *
+ * @ap: argu
+ * @params: struct
  *
- *
- *
- *
- *
- *
+ * Return: bytes printed
 */
 int print_unsigned(va_list ap, params_t *params)
 {
@@ -55,10 +55,14 @@ int print_unsigned(va_list ap, params_t *params)
 	params->unsign = 1;
 	return (print_number(convert(l, 10, CONVERT_UNSIGNED, params), params));
 }
+
 /**
+ * print_address - print address
  *
+ * @ap: argu
+ * @params: struct
  *
- *
+ * Return: bytes printed
 */
 int print_address(va_list ap, params_t *params)
 {

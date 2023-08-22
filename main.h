@@ -10,7 +10,7 @@
 #define BUF_FLUSH -1
 #define NULL_STRING "(null)"
 #define PARAMS_INT {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-#define CONVERT_LOWERCSE
+#define CONVERT_LOWERCASE
 #define CONVERT_UNSIGNED
 
 /**
@@ -21,17 +21,17 @@
 */
 typedef struct parameters
 {
-	unsigned int unsign	: 1;
-	unsigned int plus_flag	: 1;
-	unsigned int space_flag	: 1;
+	unsigned int unsign		: 1;
+	unsigned int plus_flag		: 1;
+	unsigned int space_flag		: 1;
 	unsigned int hashtag_flag	: 1;
-	unsigned int zero_flag	: 1;
-	unsigned int minus_flag	: 1;
+	unsigned int zero_flag		: 1;
+	unsigned int minus_flag		: 1;
 
 	unsigned int width;
 	unsigned int precision;
-	unsigned int h_modifier;
-	unsigned int l_modifier;
+	unsigned int h_modifier		: 1;
+	unsigned int l_modifier		: 1;
 } params_t;
 /**
  * struct format - match the conversion specifiers for printf
@@ -53,17 +53,17 @@ int print_char(va_list ap, params_t *params);
 int print_int(va_list ap, params_t *params);
 int print_string(va_list ap, params_t *params);
 int print_percent(va_list ap, params_t *params);
-int print_s(va_list ap, params_t *params);
+int print_S(va_list ap, params_t *params);
 
 char *convert(long int num, int base, int flags, params_t *params);
 int print_unsigned(va_list ap, params_t *params);
 int print_address(va_list ap, params_t *params);
 
 int(*get_specifier(char *s))(va_list ap, params_t *params);
-int get_print_func(char * s, va_list ap, params_t *params);
+int get_print_func(char *s, va_list ap, params_t *params);
 int get_flag(char *s, params_t *params);
 int get_modifier(char *s, params_t *params);
-char *get_width(char * s, params_t *params, va_list ap);
+char *get_width(char *s, params_t *params, va_list ap);
 
 int print_HEX(va_list ap, params_t *params);
 int print_hex(va_list ap, params_t *params);

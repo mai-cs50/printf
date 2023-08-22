@@ -50,7 +50,7 @@ int print_string(va_list ap, params_t *params)
 	unsigned int pad = 0, sum = 0, i = 0, j;
 
 	(void)params;
-	switch((int)(!str))
+	switch ((int)(!str))
 	case 1:
 		str = NULL_STRING;
 
@@ -90,7 +90,7 @@ int print_percent(va_list ap, params_t *params)
 {
 	(void)ap;
 	(void)params;
-	return(_putchar('%'));
+	return (_putchar('%'));
 }
 /**
  *

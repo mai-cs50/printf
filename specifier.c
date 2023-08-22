@@ -5,8 +5,6 @@
  * @s: string
  *
  * Return: n of bytes
- *
- *
 */
 int (*get_specifier(char *s))(va_list ap, params_t *params)
 {
@@ -22,40 +20,49 @@ int (*get_specifier(char *s))(va_list ap, params_t *params)
 		{"x", print_hex},
 		{"X", print_HEX},
 		{"p", print_address},
-		{"S", print_s},
+		{"S", print_S},
 		{"r", print_rev},
 		{"R", print_rot13},
 		{NULL, NULL}
 	};
 	int i = 0;
+
 	while (specifiers[i].specifier)
 	{
 		if (*s == specifiers[i].specifier[0])
 		{
-			return specifiers[i].f;
+			return (specifiers[i].f);
 		}
 		i++;
 	}
 	return (NULL);
 }
 /**
+ * get_print_func - format func
  *
+ * @s: str
+ * @ap: arg
+ * @params: struct
  *
- *
- *
- *
- *
- *
+ * Return: n
  *
 */
 int get_print_func(char *s, va_list ap, params_t *params)
 {
-	int (*f) (va_list, params_t *) = get_specifier(s);
+	int (*f)(va_list, params_t *) = get_specifier(s);
 
 	if (f)
 		return (f(ap, params));
 	return (0);
 }
+/**
+ * get_flag - flag func
+ *
+ * @s: str
+ * @params: arg
+ *
+ * Return: i
+*/
 int get_flag(char *s, params_t *params)
 {
 	int i = 0;
@@ -81,11 +88,13 @@ int get_flag(char *s, params_t *params)
 	return (i);
 }
 /**
+ * get_width - get width
  *
+ * @s: str
+ * @ap: arg
+ * @params: struct
  *
- *
- *
- *
+ * Return: pointer
 */
 char *get_width(char *s, params_t *params, va_list ap)
 {
@@ -103,4 +112,27 @@ char *get_width(char *s, params_t *params, va_list ap)
 	}
 	params->width = d;
 	return (s);
+}
+/**
+ * get_modifier - mod func
+ *
+ * @s: str
+ * @params: arg
+ *
+ * Return: i
+*/
+int get_modifier(char *s, params_t *params)
+{
+	int i = 0;
+
+	switch (*s)
+	{
+		case 'h':
+			i = params->h_modifier = 1;
+			break;
+		case 'l':
+			i = params->l_modifier = 1;
+			break;
+	}
+	return (i);
 }
