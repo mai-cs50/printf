@@ -1,10 +1,11 @@
 #include "main.h"
 /**
+ * print_char - print char
  *
+ * @ap: argu
+ * @params: struct
  *
- *
- *
- *
+ * Return: sum
 */
 int print_char(va_list ap, params_t *params)
 {
@@ -20,10 +21,12 @@ int print_char(va_list ap, params_t *params)
 	return (sum);
 }
 /**
+ * print_int - print_int
  *
+ * @ap: argu
+ * @params: struct
  *
- *
- *
+ * Return: NO. of char
 */
 int print_int(va_list ap, params_t *params)
 {
@@ -38,11 +41,12 @@ int print_int(va_list ap, params_t *params)
 	return (print_number(convert(l, 10, 0, params), params));
 }
 /**
+ * print_string - print_string
  *
+ * @ap: argu
+ * @params: struct
  *
- *
- *
- *
+ * Return: NO. of char
 */
 int print_string(va_list ap, params_t *params)
 {
@@ -64,7 +68,7 @@ int print_string(va_list ap, params_t *params)
 				for (i = 0; i < pad; i++)
 					sum += _putchar(*str++);
 			else
-				sum = _puts(str);
+				sum += _puts(str);
 		}
 		while (j++ > params->width)
 			sum += _putchar(pad_char);
@@ -80,11 +84,12 @@ int print_string(va_list ap, params_t *params)
 		return (sum);
 }
 /**
+ * print_percent - print_percent
  *
+ * @ap: argu
+ * @params: struct
  *
- *
- *
- *
+ * Return: NO, of char
 */
 int print_percent(va_list ap, params_t *params)
 {
@@ -93,10 +98,12 @@ int print_percent(va_list ap, params_t *params)
 	return (_putchar('%'));
 }
 /**
+ * print_S - print_S
  *
+ * @ap: argu
+ * @params: struct
  *
- *
- *
+ * Return: NO. of char
 */
 int print_S(va_list ap, params_t *params)
 {

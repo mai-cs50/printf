@@ -1,11 +1,12 @@
 #include "main.h"
 /**
+ * print_from_to - print address
  *
+ * @start: st ad
+ * @stop: sp ad
+ * @except: exc ad
  *
- *
- *
- *
- *
+ * Return: sum
 */
 int print_from_to(char *start, char *stop, char *except)
 {
@@ -20,12 +21,12 @@ int print_from_to(char *start, char *stop, char *except)
 	return (sum);
 }
 /**
+ * print_rev - print rev str
  *
+ * @ap: argu
+ * @params: struct
  *
- *
- *
- *
- *
+ * Return: sum
 */
 int print_rev(va_list ap, params_t *params)
 {
@@ -44,13 +45,12 @@ int print_rev(va_list ap, params_t *params)
 	return (sum);
 }
 /**
+ * print_rot13 - print rot13
  *
+ * @pa: argu
+ * @params: struct
  *
- *
- *
- *
- *
- *
+ * Return: count
 */
 int print_rot13(va_list ap, params_t *params)
 {

@@ -1,23 +1,22 @@
 #include "main.h"
 #include <string.h>
 /**
+ * _isdigit - check if char is digit
  *
+ * @c: char
  *
- *
- *
- *
+ * Return: 1 or 0
 */
 int _isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
 }
 /**
+ * _strlen - l of string
  *
+ * @s: str
  *
- *
- *
- *
- *
+ * Return: l
 */
 int _strlen(char *s)
 {
@@ -28,11 +27,12 @@ int _strlen(char *s)
 	return (i);
 }
 /**
+ * print_number - print number
  *
+ * @str: string
+ * @params: struct
  *
- *
- *
- *
+ * Return: char printed
 */
 int print_number(char *str, params_t *params)
 {
@@ -58,14 +58,16 @@ int print_number(char *str, params_t *params)
 		return (print_number_left_shift(str, params));
 }
 /**
+ * print_number_right_shift - print number
  *
+ * @str: string
+ * @params: struct
  *
- *
- *
+ * Return: char printed
 */
 int print_number_right_shift(char *str, params_t *params)
 {
-	unsigned int n = 0, neg, neg2, i = strlen(str);
+	unsigned int n = 0, neg, neg2, i = _strlen(str);
 	char pad_char = ' ';
 
 	if (params->zero_flag && !params->minus_flag)
@@ -98,14 +100,12 @@ int print_number_right_shift(char *str, params_t *params)
 	return (n);
 }
 /**
+ * print_number_left_shift - print number
  *
+ * @str: string
+ * @params: struct
  *
- *
- *
- *
- *
- *
- *
+ * Return: char printed
 */
 int print_number_left_shift(char *str, params_t *params)
 {
@@ -114,7 +114,7 @@ int print_number_left_shift(char *str, params_t *params)
 
 	if (params->zero_flag && !params->minus_flag)
 		pad_char = '0';
-	neg = neg2 = !params->minus_flag;
+	neg = neg2 = (!params->unsign && *str == '-');
 
 	if (neg && i < params->width && pad_char == '0' && !params->minus_flag)
 		str++;

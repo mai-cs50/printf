@@ -1,12 +1,12 @@
 #include "main.h"
 /**
+ * get_precision - get precision
  *
+ * @p: str
+ * @ap: argu
+ * @params: struct
  *
- *
- *
- *
- *
- *
+ * Return: pointer
 */
 char *get_precision(char *p, params_t *params, va_list ap)
 {
