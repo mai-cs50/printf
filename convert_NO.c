@@ -27,7 +27,7 @@ int print_hex(va_list ap, params_t *params)
 		*--str = '0';
 	}
 	params->unsign = 1;
-	return (c += print_number(str, params));
+	return (c += print_no(str, params));
 }
 /**
  * print_HEX - print HEX
@@ -56,7 +56,7 @@ int print_HEX(va_list ap, params_t *params)
 		*--str = '0';
 	}
 	params->unsign = 1;
-	return (c += print_number(str, params));
+	return (c += print_no(str, params));
 }
 
 /**
@@ -76,7 +76,7 @@ int print_binary(va_list ap, params_t *params)
 	if (params->hashtag_flag && n)
 		*--str = '0';
 	params->unsign = 1;
-	return (c += print_number(str, params));
+	return (c += print_no(str, params));
 }
 
 /**
@@ -104,5 +104,5 @@ int print_octal(va_list ap, params_t *params)
 	if (params->hashtag_flag && l)
 		*--str = '0';
 	params->unsign = 1;
-	return (c += print_number(str, params));
+	return (c += print_no(str, params));
 }

@@ -53,9 +53,9 @@ int print_number(char *str, params_t *params)
 		*--str = '-';
 
 	if (!params->minus_flag)
-		return (print_number_right_shift(str, params));
+		return (print_no_right_shift(str, params));
 	else
-		return (print_number_left_shift(str, params));
+		return (print_no_left_shift(str, params));
 }
 /**
  * print_number_right_shift - print number
