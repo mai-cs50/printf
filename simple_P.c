@@ -47,7 +47,7 @@ int print_rev(va_list ap, params_t *params)
 /**
  * print_rot13 - print rot13
  *
- * @pa: argu
+ * @ap: argu
  * @params: struct
  *
  * Return: count

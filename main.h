@@ -14,10 +14,18 @@
 #define CONVERT_UNSIGNED	2
 
 /**
+ * struct parameters - struct parameters
  *
- *
- *
- *
+ * @unsign: unsign value
+ * @plus_flag: on if specifier
+ * @space_flag: on if specifier
+ * @hashtag_flag: on if specifier
+ * @zero_flag: on if specifier
+ * @minus_flag: on if specifier
+ * @width: specifier
+ * @precision: specifier
+ * @h_modifier: on if specifier
+ * @l_modifier: on if specifier
 */
 typedef struct parameters
 {
@@ -34,8 +42,9 @@ typedef struct parameters
 	unsigned int l_modifier		: 1;
 } params_t;
 /**
- * struct format - match the conversion specifiers for printf
- * @id: type char pointer of the specifier i.e (l, h) for (d, i, u, o, x, X)
+ * struct specifier - match the conversion specifiers for printf
+ * @specifier: type char pointer of the
+ *                specifier i.e (l, h) for (d, i, u, o, x, X)
  * @f: type pointer to function for the conversion specifier
  *
  */

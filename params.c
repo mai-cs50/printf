@@ -1,13 +1,13 @@
 #include "main.h"
 /**
- * init_params - params
+ * int_params - params
  *
  * @params: p
  * @ap: va
  *
  * Rturn: void
 */
-void init_params(params_t *params, va_list ap)
+void int_params(params_t *params, va_list ap)
 {
 	params->unsign = 0;
 	params->plus_flag = 0;
