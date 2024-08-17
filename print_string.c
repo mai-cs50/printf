@@ -9,6 +9,7 @@
 
 int print_str(va_list list)
 {
+	/*ewfdsfdf*/
 	char *p;
 	int p_len;
 

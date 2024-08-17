@@ -8,6 +8,7 @@
  **/
 int print_int(va_list list)
 {
+	/*cccc*/
 	char *p_buff;
 	int size;
 

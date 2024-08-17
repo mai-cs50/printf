@@ -9,17 +9,19 @@
  */
 int _putchar(char c)
 {
+	/*return*/
 	return (buffer(c));
 }
 
 /**
- * buffer. Saves the character in the buffer
- * @c; Character to be saved
+ * buffer - Saves the character in the buffer
+ * @c: Character to be saved
  *
- * Return; 1
+ * Return: 1
  **/
 int buffer(char c)
 {
+	/*sfsdfds*/
 	static char buf[1024];
 	static int i;
 
