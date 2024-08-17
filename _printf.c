@@ -11,8 +11,12 @@ int _printf(const char *format,...)
 	int count;
 	va_list args;
 
+	/*check*/
+
 	if (format == NULL)
 		return (-1);
+
+	/*calculate*/
 
 	count = _strlen(format);
 	if (count <= 0)
