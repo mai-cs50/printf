@@ -9,7 +9,8 @@
 
 int print_str(va_list list)
 {
-	/*ewfdsfdf*/
+	/*ewfdsfdf dsfsdf*/
+
 	char *p;
 	int p_len;
 
