@@ -8,6 +8,9 @@
 */
 int _printf(const char *format,...)
 {
+	/*
+	 * imp
+	*/
 	//imp
 	int count;
 	va_list args;
