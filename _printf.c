@@ -1,13 +1,14 @@
 #include "main.h"
 
 /**
- * _printf. Function to print any value
- * @format; string format
+ * _printf - Function to print any value
+ * @format: string format
  *
- * Return; the number of characters printed
+ * Return: the number of characters printed
 */
 int _printf(const char *format,...)
 {
+	//imp
 	int count;
 	va_list args;
 
