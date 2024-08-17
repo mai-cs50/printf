@@ -22,10 +22,20 @@ int _printf(const char *format, ...)
 	if (count <= 0)
 		return (0);
 
+	/*initialize*/
+
 	va_start(args, format);
+
+	/*procces*/
+
 	count = handle(format, args);
 
+	/*output*/
+
 	_putchar(-1);
+
+	/*ensure*/
+
 	va_end(args);
 
 	return (count);
